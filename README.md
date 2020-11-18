@@ -4,8 +4,8 @@ API Blueprint を使ってモックサーバとドキュメントを同時に生
 
 ## サンプルのデプロイ先
 
-- ドキュメント:
-- モック:
+- ドキュメント: https://docs-api-blueprint-konatsup.netlify.app/
+- モックサーバ: http://mock-api-blueprint-konatsup.herokuapp.com
 
 ## 使用ツール
 
@@ -43,3 +43,21 @@ open: 生成されたHTMLをブラウザで開く
 $ curl -X GET http://localhost:3000/example
 $ curl -X POST http://localhost:3000/example -H 'Content-Type:application/json' -d '{"value":"hoge"}'
 ```
+
+## Heroku へのデプロイ
+
+```
+$ heroku login
+$ heroku create アプリ名
+$ heroku container:login
+$ heroku stack:set container
+$ git push heroku main
+```
+
+## ファイルの説明
+
+- public/index.html: 生成されたドキュメント
+- Dockerfile: モックサーバを立てるための Dockerfile(主にデプロイ時に利用)
+- heroku.yml: Heroku に Docker コンテナをデプロイするための設定ファイル
+- Makefile: make コマンド集
+- input.apib: API Blueprint 形式で仕様内容を記述するファイル
