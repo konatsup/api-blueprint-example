@@ -1,0 +1,78 @@
+FORMAT: 1A
+HOST: http://localhost:3000
+
+# Sample API
+サンプルの仕様書
+
+# Group Example
+
+## Example [/example]
+### Example GET API [GET]
+#### 処理概要
+
+* [端的にどんなAPIかを書く]
+* [注意点、特記事項など]
+
++ Response 200 (application/json)
+  + Attributes
+      + value: `GET API Response Example` (string) - 値
+
+### Example POST API [POST]
+#### 処理概要
+
+* [端的にどんなAPIかを書く]
+* [注意点、特記事項など]    
+
++ Request (application/json)
+  + Attributes
+      + value: `POST API Request Example` (string, required) - 値
+
++ Response 200 (application/json)
+  + Attributes
+      + value: `POST API Response Example` (string) - 値
+
+
+# Group All User
+
+## Todo一覧取得 [GET /todos]
+#### 処理概要
+
+* Todo一覧を取得
+
++ Response 200 (application/json)
+  + Attributes
+      + description: `OK` (string) - 説明
+      + todos(array[Todo], fixed-type) - Todo一覧
+
+## 指定したTodo取得 [GET /todos/{todo_id}]
+#### 処理概要
+
+* 指定したTodoを取得
+
++ Parameters
+  + todo_id: `1` (number, required) - TodoのID
+
++ Response 200 (application/json)
+  + Attributes
+      + description: `OK` (string) - 説明
+      + todos(Todo) - Todo詳細
+
+## Todoの新規追加 [POST /todos/new]
+#### 処理概要
+
+* Todoの新規追加
+
++ Request (application/json)
+  + Attributes
+      + name: `やること` (string, required) - 名前
+
++ Response 201 (application/json)
+  + Attributes
+      + description: `Created` (string) - Description
+      + message: `Todoを新規作成しました` (string) - メッセージ
+      + todo (Todo) - 追加したTodo詳細
+
+## Data Structures
+### Todo
++ id: `1` (number) - ID
++ name: `やること` (string) - 名前
