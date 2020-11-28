@@ -4,8 +4,8 @@ API Blueprint を使ってモックサーバとドキュメントを同時に生
 
 ## サンプルのデプロイ先
 
-- ドキュメント: https://docs-api-blueprint-konatsup.netlify.app/
-- モックサーバ: http://mock-api-blueprint-konatsup.herokuapp.com
+- ドキュメント: https://docs-api-blueprint-konatsup.netlify.app
+- モックサーバ: https://mock-api-blueprint-konatsup.herokuapp.com
 
 ## 使用ツール
 
